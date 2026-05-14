@@ -15,7 +15,7 @@
 struct Graph {
     // Un solo mapa basta: Llave (char* label) -> Valor (List* de Edge*)
     Map* adjacencyMap; 
-}Graph;
+};
 
 // Función auxiliar para comparar strings en el mapa
 int is_equal_string(void *key1, void *key2) {

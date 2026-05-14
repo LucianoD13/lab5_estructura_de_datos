@@ -110,3 +110,18 @@ test.c:188:12: error: ‘g’ undeclared (first use in this function)
       |            ^
 cc1: all warnings being treated as errors
 72861e2
+Thu May 14 09:09:35 PM UTC 2026: 
+ graph.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘createGraph’:
+graph.c:32:16: error: ‘Graph’ has no member named ‘adyacencyMap’; did you mean ‘adjacencyMap’?
+   32 |         grafo->adyacencyMap = createMap(is_equal_string);
+      |                ^~~~~~~~~~~~
+      |                adjacencyMap
+graph.c:32:31: error: implicit declaration of function ‘createMap’; did you mean ‘createGraph’? [-Wimplicit-function-declaration]
+   32 |         grafo->adyacencyMap = createMap(is_equal_string);
+      |                               ^~~~~~~~~
+      |                               createGraph
+bd457d7
