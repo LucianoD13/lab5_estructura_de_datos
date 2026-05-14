@@ -6,3 +6,107 @@ Fri May  8 10:07:21 PM UTC 2026:
  tests:  0|6
 ========================================
 36e8bf5
+Thu May 14 09:05:39 PM UTC 2026: 
+ graph.c | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+graph.c:18:2: error: ‘Graph’ redeclared as different kind of symbol
+   18 | }Graph;
+      |  ^~~~~
+In file included from graph.c:6:
+graph.h:6:22: note: previous declaration of ‘Graph’ with type ‘Graph’
+    6 | typedef struct Graph Graph;
+      |                      ^~~~~
+graph.c:29:1: error: unknown type name ‘Graph’; use ‘struct’ keyword to refer to the type
+   29 | Graph* createGraph() {
+      | ^~~~~
+      | struct 
+graph.c:29:8: error: conflicting types for ‘createGraph’; have ‘int *()’
+   29 | Graph* createGraph() {
+      |        ^~~~~~~~~~~
+graph.h:13:8: note: previous declaration of ‘createGraph’ with type ‘Graph *()’
+   13 | Graph* createGraph();
+      |        ^~~~~~~~~~~
+graph.c: In function ‘createGraph’:
+graph.c:30:12: error: ‘grafo’ undeclared (first use in this function)
+   30 |     Graph* grafo = malloc(sizeof(Graph));
+      |            ^~~~~
+graph.c:30:12: note: each undeclared identifier is reported only once for each function it appears in
+graph.c:32:31: error: implicit declaration of function ‘createMap’; did you mean ‘createGraph’? [-Wimplicit-function-declaration]
+   32 |         grafo->adyacencyMap = createMap(is_equal_string);
+      |                               ^~~~~~~~~
+      |                               createGraph
+graph.c: At top level:
+graph.c:38:14: error: expected declaration specifiers or ‘...’ before ‘Graph’
+   38 | void addNode(Graph* g, const char* label) {
+      |              ^~~~~
+graph.c:43:14: error: expected declaration specifiers or ‘...’ before ‘Graph’
+   43 | void addEdge(Graph* g, const char* src, const char* dest, int weight) {
+      |              ^~~~~
+graph.c:48:16: error: expected declaration specifiers or ‘...’ before ‘Graph’
+   48 | List* getEdges(Graph* g, const char* label) {
+      |                ^~~~~
+graph.c:54:15: error: expected declaration specifiers or ‘...’ before ‘Graph’
+   54 | int getWeight(Graph* g, const char* label1, const char* label2) {
+      |               ^~~~~
+graph.c:62:25: error: expected declaration specifiers or ‘...’ before ‘Graph’
+   62 | List* getAdjacentLabels(Graph* g, const char* label) {
+      |                         ^~~~~
+graph.c:69:19: error: expected declaration specifiers or ‘...’ before ‘Graph’
+   69 | void destroyGraph(Graph* g) {
+      |                   ^~~~~
+test.c: In function ‘test_create’:
+test.c:54:12: error: ‘g’ undeclared (first use in this function)
+   54 |     Graph* g = createGraph();
+      |            ^
+test.c: In function ‘test_addNode’:
+test.c:73:5: error: statement with no effect [-Werror=unused-value]
+   73 |     Graph mock_graph;
+      |     ^~~~~
+test.c:73:10: error: expected ‘;’ before ‘mock_graph’
+   73 |     Graph mock_graph;
+      |          ^~~~~~~~~~~
+      |          ;
+test.c:74:5: error: ‘mock_graph’ undeclared (first use in this function)
+   74 |     mock_graph.adjacencyMap = map_create(test_is_equal_string);
+      |     ^~~~~~~~~~
+test.c: In function ‘test_addEdge’:
+test.c:99:5: error: statement with no effect [-Werror=unused-value]
+   99 |     Graph mock_graph;
+      |     ^~~~~
+test.c:99:10: error: expected ‘;’ before ‘mock_graph’
+   99 |     Graph mock_graph;
+      |          ^~~~~~~~~~~
+      |          ;
+test.c:100:5: error: ‘mock_graph’ undeclared (first use in this function)
+  100 |     mock_graph.adjacencyMap = map_create(test_is_equal_string);
+      |     ^~~~~~~~~~
+test.c: In function ‘test_getEdges’:
+test.c:130:5: error: statement with no effect [-Werror=unused-value]
+  130 |     Graph mock_graph;
+      |     ^~~~~
+test.c:130:10: error: expected ‘;’ before ‘mock_graph’
+  130 |     Graph mock_graph;
+      |          ^~~~~~~~~~~
+      |          ;
+test.c:131:5: error: ‘mock_graph’ undeclared (first use in this function)
+  131 |     mock_graph.adjacencyMap = map_create(test_is_equal_string);
+      |     ^~~~~~~~~~
+test.c: In function ‘test_getWeight’:
+test.c:152:5: error: statement with no effect [-Werror=unused-value]
+  152 |     Graph mock_graph;
+      |     ^~~~~
+test.c:152:10: error: expected ‘;’ before ‘mock_graph’
+  152 |     Graph mock_graph;
+      |          ^~~~~~~~~~~
+      |          ;
+test.c:153:5: error: ‘mock_graph’ undeclared (first use in this function)
+  153 |     mock_graph.adjacencyMap = map_create(test_is_equal_string);
+      |     ^~~~~~~~~~
+test.c: In function ‘test_integracion_rutas’:
+test.c:188:12: error: ‘g’ undeclared (first use in this function)
+  188 |     Graph* g = createGraph();
+      |            ^
+cc1: all warnings being treated as errors
+72861e2
