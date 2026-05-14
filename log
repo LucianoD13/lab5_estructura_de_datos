@@ -170,3 +170,17 @@ graph.c:33:16: error: returning ‘Map *’ from a function with incompatible re
    33 |         return grafo;
       |                ^~~~~
 035e534
+Thu May 14 09:19:25 PM UTC 2026: 
+ graph.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘createGraph’:
+graph.c:31:5: error: expected ‘,’ or ‘;’ before ‘if’
+   31 |     if(grafo != NULL){
+      |     ^~
+graph.c:30:12: error: unused variable ‘grafo’ [-Werror=unused-variable]
+   30 |     Graph* grafo = malloc(sizeof(Graph))
+      |            ^~~~~
+cc1: all warnings being treated as errors
+40b7379
