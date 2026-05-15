@@ -237,3 +237,28 @@ graph.c:68:14: error: unused variable ‘p’ [-Werror=unused-variable]
       |              ^
 cc1: all warnings being treated as errors
 e2d6d0e
+Fri May 15 03:12:30 PM UTC 2026: 
+ graph.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘getAdjacentLabels’:
+graph.c:69:18: error: expected expression before ‘}’ token
+   69 |     if(p != NULL)}{
+      |                  ^
+graph.c: At top level:
+graph.c:69:19: error: expected identifier or ‘(’ before ‘{’ token
+   69 |     if(p != NULL)}{
+      |                   ^
+graph.c:79:5: error: expected identifier or ‘(’ before ‘return’
+   79 |     return NULL;
+      |     ^~~~~~
+graph.c:80:1: error: expected identifier or ‘(’ before ‘}’ token
+   80 | }
+      | ^
+graph.c: In function ‘getAdjacentLabels’:
+graph.c:69:18: error: control reaches end of non-void function [-Werror=return-type]
+   69 |     if(p != NULL)}{
+      |                  ^
+cc1: all warnings being treated as errors
+94491fc
