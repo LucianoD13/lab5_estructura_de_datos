@@ -286,3 +286,21 @@ Fri May 15 05:52:10 PM UTC 2026:
  1 file changed, 1 insertion(+), 1 deletion(-)
  tests:  0|0
 7a2f0de
+Fri May 15 06:06:40 PM UTC 2026: 
+ graph.c | 14 +++++++++++++-
+ 1 file changed, 13 insertions(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘addEdge’:
+graph.c:48:5: error: unknown type name ‘mapPair’; did you mean ‘MapPair’?
+   48 |     mapPair* p = map_search(g->adjacency, (void*)src);
+      |     ^~~~~~~
+      |     MapPair
+graph.c:48:32: error: ‘Graph’ has no member named ‘adjacency’; did you mean ‘adjacencyMap’?
+   48 |     mapPair* p = map_search(g->adjacency, (void*)src);
+      |                                ^~~~~~~~~
+      |                                adjacencyMap
+graph.c:50:24: error: request for member ‘value’ in something not a structure or union
+   50 |         List* edges = p->value;
+      |                        ^~
+834f50f
