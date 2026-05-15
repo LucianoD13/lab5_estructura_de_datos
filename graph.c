@@ -66,7 +66,7 @@ List* getAdjacentLabels(Graph* g, const char* label) {
     if (!g || !label) return NULL;
 
     MapPair* p = map_search(g->adjacencyMap, (void*)label);
-    if(p != NULL)}{
+    if(p != NULL){
         List* new = list_create();
         List* edges = p->value;
         Edge* newE = list_first(edges);
