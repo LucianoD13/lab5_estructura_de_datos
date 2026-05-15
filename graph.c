@@ -65,7 +65,7 @@ int getWeight(Graph* g, const char* label1, const char* label2) {
 List* getAdjacentLabels(Graph* g, const char* label) {
     if (!g || !label) return NULL;
 
-    MapPair* p = map_search(g->adjacencyMap, label)
+    MapPair* p = map_search(g->adjacencyMap, (void*)label)
     if(p != NULL)}{
         List* new = list_create();
         List* edges = pair->value;
