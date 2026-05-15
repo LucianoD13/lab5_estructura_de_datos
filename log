@@ -194,3 +194,28 @@ Thu May 14 09:37:31 PM UTC 2026:
  1 file changed, 2 insertions(+)
  tests:  0|0
 5757079
+Fri May 15 03:11:10 PM UTC 2026: 
+ graph.c | 12 +++++++++++-
+ 1 file changed, 11 insertions(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘getAdjacentLabels’:
+graph.c:68:46: error: passing argument 2 of ‘map_search’ discards ‘const’ qualifier from pointer target type [-Werror=discarded-qualifiers]
+   68 |     MapPair* p = map_search(g->adjacencyMap, label)
+      |                                              ^~~~~
+In file included from graph.c:8:
+map.h:22:37: note: expected ‘void *’ but argument is of type ‘const char *’
+   22 | MapPair *map_search(Map *map, void *key);
+      |                               ~~~~~~^~~
+graph.c:69:5: error: expected ‘,’ or ‘;’ before ‘if’
+   69 |     if(p != NULL)}{
+      |     ^~
+graph.c:71:23: error: ‘pair’ undeclared (first use in this function)
+   71 |         List* edges = pair->value;
+      |                       ^~~~
+graph.c:71:23: note: each undeclared identifier is reported only once for each function it appears in
+graph.c:68:14: error: unused variable ‘p’ [-Werror=unused-variable]
+   68 |     MapPair* p = map_search(g->adjacencyMap, label)
+      |              ^
+cc1: all warnings being treated as errors
+75bb0ec
