@@ -270,3 +270,14 @@ Fri May 15 03:12:49 PM UTC 2026:
 Fri May 15 03:16:31 PM UTC 2026: 
  tests:  0|0
 42401b6
+Fri May 15 05:51:53 PM UTC 2026: 
+ graph.c | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘getWeight’:
+graph.c:61:32: error: ‘Graph’ has no member named ‘adjancencyMap’; did you mean ‘adjacencyMap’?
+   61 |     MapPair* p = map_search(g->adjancencyMap, (void*) label1);
+      |                                ^~~~~~~~~~~~~
+      |                                adjacencyMap
+4643913
